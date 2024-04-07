@@ -1,0 +1,83 @@
+@show
+print @run         -- run all tests with different compilers and stop, ignoring remaining options
+print @clean       -- short for "fpm clean --skip; update --clean --verbose" and default build
+print @install     -- install gfortran version
+print @list        -- list files
+print @show        -- show this list
+stop
+################################################################################
+@clean
+system fpm clean --skip
+system fpm update --clean --verbose
+option build 
+################################################################################
+@sanitize_basic
+options run --flag "-fsanitize=address"
+################################################################################
+@sanitize
+options run --profile debug --flag '-g0 -I/tmp' --flag '-fsanitize=address'
+################################################################################
+@list
+#print COMMANDS:
+#system fpm --list
+print APPLICATIONS:
+system fpm run --list
+print EXAMPLES:
+system fpm run --example --list
+print TESTS:
+system fpm test --list
+stop
+################################################################################
+@run
+
+########################
+# method 0
+########################
+system fpm run --compiler gfortran  --verbose --profile release                 -- par_fortran=0 verbose=0 method=0
+system fpm run --compiler gfortran  --verbose --profile release                 -- par_fortran=1 verbose=0 method=0
+system fpm run --compiler gfortran  --verbose --profile release --flag '-Ofast' -- par_fortran=1 verbose=0 method=0
+
+system fpm run --compiler ifort     --verbose --profile release                 --               verbose=0
+system fpm run --compiler ifort     --verbose --profile release --flag          -- par_fortran=1 verbose=0 method=0
+system fpm run --compiler ifort     --verbose --profile release --flag '-fast'  -- par_fortran=1 verbose=0 method=0
+
+system fpm run --compiler ifx       --verbose --profile release                 --               verbose=0
+system fpm run --compiler ifx       --verbose --profile release --flag          -- par_fortran=1 verbose=0 method=0
+system fpm run --compiler ifx       --verbose --profile release --flag '-fast'  -- par_fortran=1 verbose=0 method=0
+########################
+# method 1
+########################
+system fpm run --compiler gfortran  --verbose --profile release                 -- par_fortran=0 verbose=0 method=1
+system fpm run --compiler gfortran  --verbose --profile release                 -- par_fortran=1 verbose=0 method=1
+system fpm run --compiler gfortran  --verbose --profile release --flag '-Ofast' -- par_fortran=1 verbose=0 method=1
+
+system fpm run --compiler ifort     --verbose --profile release                 --               verbose=0 method=1
+system fpm run --compiler ifort     --verbose --profile release --flag          -- par_fortran=1 verbose=0 method=1
+system fpm run --compiler ifort     --verbose --profile release --flag '-fast'  -- par_fortran=1 verbose=0 method=1
+
+system fpm run --compiler ifx       --verbose --profile release                 --               verbose=0 method=1
+system fpm run --compiler ifx       --verbose --profile release --flag          -- par_fortran=1 verbose=0 method=1
+system fpm run --compiler ifx       --verbose --profile release --flag '-fast'  -- par_fortran=1 verbose=0 method=1
+########################
+# method 2
+########################
+system fpm run --compiler gfortran  --verbose --profile release                 -- par_fortran=0 verbose=0 method=2
+system fpm run --compiler gfortran  --verbose --profile release                 -- par_fortran=1 verbose=0 method=2
+system fpm run --compiler gfortran  --verbose --profile release --flag '-Ofast' -- par_fortran=1 verbose=0 method=2
+
+system fpm run --compiler ifort     --verbose --profile release                 --               verbose=0 method=2
+system fpm run --compiler ifort     --verbose --profile release --flag          -- par_fortran=1 verbose=0 method=2
+system fpm run --compiler ifort     --verbose --profile release --flag '-fast'  -- par_fortran=1 verbose=0 method=2
+
+system fpm run --compiler ifx       --verbose --profile release                 --               verbose=0 method=2
+system fpm run --compiler ifx       --verbose --profile release --flag          -- par_fortran=1 verbose=0 method=2
+system fpm run --compiler ifx       --verbose --profile release --flag '-fast'  -- par_fortran=1 verbose=0 method=2
+########################
+
+stop test completed with ifort, gfortran. Remaining parameters ignored
+
+################################################################################
+@install
+system mkdir -p ~/.local/bin
+option run --profile release '*' --compiler gfortran --runner "install -vbp -m 0711 -t ~/.local/bin"
+################################################################################

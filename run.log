@@ -1,0 +1,733 @@
+fpm: No build directory found.
+ + mkdir -p build
+ + mkdir -p build/dependencies
+# Dep: FortranVec version 0.1.0 at ./.
+[  0%]               mod_utilties.F90
+[ 25%]               mod_utilties.F90  done.
+[ 25%]                libFortranVec.a
+[ 50%]                libFortranVec.a  done.
+[ 50%]                       main.f90
+[ 75%]                       main.f90  done.
+[ 75%]                     FortranVec
+[100%]                     FortranVec  done.
+[100%] Project compiled successfully.
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+ + mkdir -p build/gfortran_A505EE2B59DE3160
+ + mkdir -p build/gfortran_A43A99359B8528EA
+ + mkdir -p build/gfortran_11A5B31A7089DD14
+[  0%]               mod_utilties.F90
+ + mkdir -p build/gfortran_A43A99359B8528EA/FortranVec/
+ + gfortran -c ././src/mod_utilties.F90   -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -Werror=implicit-interface -ffree-form -J build/gfortran_A43A99359B8528EA -Ibuild/gfortran_A43A99359B8528EA -o build/gfortran_A43A99359B8528EA/FortranVec/src_mod_utilties.F90.o
+[ 25%]               mod_utilties.F90  done.
+[ 25%]                libFortranVec.a
+ + mkdir -p build/gfortran_A505EE2B59DE3160/FortranVec/
+ + ar -rs build/gfortran_A505EE2B59DE3160/FortranVec/libFortranVec.a build/gfortran_A43A99359B8528EA/FortranVec/src_mod_utilties.F90.o
+ar: creating build/gfortran_A505EE2B59DE3160/FortranVec/libFortranVec.a
+[ 50%]                libFortranVec.a  done.
+[ 50%]                       main.f90
+ + gfortran -c app/main.f90   -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -Werror=implicit-interface -ffree-form -J build/gfortran_A43A99359B8528EA -Ibuild/gfortran_A43A99359B8528EA -o build/gfortran_A43A99359B8528EA/FortranVec/app_main.f90.o
+[ 75%]                       main.f90  done.
+[ 75%]                     FortranVec
+ + mkdir -p build/gfortran_11A5B31A7089DD14/app/
+ + gfortran    -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -Werror=implicit-interface  -fopenmp build/gfortran_A43A99359B8528EA/FortranVec/app_main.f90.o build/gfortran_A505EE2B59DE3160/FortranVec/libFortranVec.a -o build/gfortran_11A5B31A7089DD14/app/FortranVec
+[100%]                     FortranVec  done.
+[100%] Project compiled successfully.
+ + build/gfortran_11A5B31A7089DD14/app/FortranVec "par_fortran=0" "verbose=0" "method=0"
+ Starting program...
+&ARGS
+ METHOD=0          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=0          ,
+ /
+ Starting VFI...
+ Method =            0
+ =============================================================
+ VFI runs for 11.4334249 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_A43A99359B8528EA -mtune=generic -march=x86-64 -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_A43A99359B8528EA -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/gfortran_11A5B31A7089DD14/app/FortranVec "par_fortran=1" "verbose=0" "method=0"
+ Starting program...
+&ARGS
+ METHOD=0          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=1          ,
+ /
+ Starting VFI...
+ Method =            0
+ =============================================================
+ VFI runs for 5.65368700 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_A43A99359B8528EA -mtune=generic -march=x86-64 -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_A43A99359B8528EA -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -Ofast -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+ + mkdir -p build/gfortran_47EB887499368F68
+ + mkdir -p build/gfortran_3EC294C0E066E392
+ + mkdir -p build/gfortran_15E79EC25CE6D804
+[  0%]               mod_utilties.F90
+ + mkdir -p build/gfortran_3EC294C0E066E392/FortranVec/
+ + gfortran -c ././src/mod_utilties.F90   -Ofast -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -Werror=implicit-interface -ffree-form -J build/gfortran_3EC294C0E066E392 -Ibuild/gfortran_3EC294C0E066E392 -o build/gfortran_3EC294C0E066E392/FortranVec/src_mod_utilties.F90.o
+[ 25%]               mod_utilties.F90  done.
+[ 25%]                libFortranVec.a
+ + mkdir -p build/gfortran_47EB887499368F68/FortranVec/
+ + ar -rs build/gfortran_47EB887499368F68/FortranVec/libFortranVec.a build/gfortran_3EC294C0E066E392/FortranVec/src_mod_utilties.F90.o
+ar: creating build/gfortran_47EB887499368F68/FortranVec/libFortranVec.a
+[ 50%]                libFortranVec.a  done.
+[ 50%]                       main.f90
+ + gfortran -c app/main.f90   -Ofast -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -Werror=implicit-interface -ffree-form -J build/gfortran_3EC294C0E066E392 -Ibuild/gfortran_3EC294C0E066E392 -o build/gfortran_3EC294C0E066E392/FortranVec/app_main.f90.o
+[ 75%]                       main.f90  done.
+[ 75%]                     FortranVec
+ + mkdir -p build/gfortran_15E79EC25CE6D804/app/
+ + gfortran    -Ofast -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -Werror=implicit-interface  -fopenmp build/gfortran_3EC294C0E066E392/FortranVec/app_main.f90.o build/gfortran_47EB887499368F68/FortranVec/libFortranVec.a -o build/gfortran_15E79EC25CE6D804/app/FortranVec
+[100%]                     FortranVec  done.
+[100%] Project compiled successfully.
+ + build/gfortran_15E79EC25CE6D804/app/FortranVec "par_fortran=1" "verbose=0" "method=0"
+ Starting program...
+&ARGS
+ METHOD=0          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=1          ,
+ /
+ Starting VFI...
+ Method =            0
+ =============================================================
+ VFI runs for 5.66799068 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_3EC294C0E066E392 -mtune=generic -march=x86-64 -Ofast -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_3EC294C0E066E392 -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+ + mkdir -p build/ifort_0B2F52F2CE7CF9BB
+ + mkdir -p build/ifort_1299263F9219F23A
+ + mkdir -p build/ifort_6F24015F6325816C
+[  0%]               mod_utilties.F90
+ + mkdir -p build/ifort_1299263F9219F23A/FortranVec/
+ + ifort -c ././src/mod_utilties.F90   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_1299263F9219F23A -Ibuild/ifort_1299263F9219F23A -o build/ifort_1299263F9219F23A/FortranVec/src_mod_utilties.F90.o
+[ 25%]               mod_utilties.F90  done.
+[ 25%]                libFortranVec.a
+ + mkdir -p build/ifort_0B2F52F2CE7CF9BB/FortranVec/
+ + ar -rs build/ifort_0B2F52F2CE7CF9BB/FortranVec/libFortranVec.a build/ifort_1299263F9219F23A/FortranVec/src_mod_utilties.F90.o
+ar: creating build/ifort_0B2F52F2CE7CF9BB/FortranVec/libFortranVec.a
+[ 50%]                libFortranVec.a  done.
+[ 50%]                       main.f90
+ + ifort -c app/main.f90   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_1299263F9219F23A -Ibuild/ifort_1299263F9219F23A -o build/ifort_1299263F9219F23A/FortranVec/app_main.f90.o
+[ 75%]                       main.f90  done.
+[ 75%]                     FortranVec
+ + mkdir -p build/ifort_6F24015F6325816C/app/
+ + ifort    -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp  -qopenmp build/ifort_1299263F9219F23A/FortranVec/app_main.f90.o build/ifort_0B2F52F2CE7CF9BB/FortranVec/libFortranVec.a -o build/ifort_6F24015F6325816C/app/FortranVec
+[100%]                     FortranVec  done.
+[100%] Project compiled successfully.
+ + build/ifort_6F24015F6325816C/app/FortranVec "verbose=0"
+ Starting program...
+ &ARGS
+ METHOD  = 1,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 0
+ /
+ Starting VFI...
+ Method =  1
+ =============================================================
+ VFI runs for 38.99532 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_1299263F9219F23A -o build/ifort_1299263F9219F23A/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifort_6F24015F6325816C/app/FortranVec "par_fortran=1" "verbose=0" "method=0"
+ Starting program...
+ &ARGS
+ METHOD  = 0,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  0
+ =============================================================
+ VFI runs for 16.54202 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_1299263F9219F23A -o build/ifort_1299263F9219F23A/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+ + mkdir -p build/ifort_C0E4F37A20DF6460
+ + mkdir -p build/ifort_E3F92D23D80A9515
+ + mkdir -p build/ifort_9A3B601192E0126D
+[  0%]               mod_utilties.F90
+ + mkdir -p build/ifort_E3F92D23D80A9515/FortranVec/
+ + ifort -c ././src/mod_utilties.F90   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_E3F92D23D80A9515 -Ibuild/ifort_E3F92D23D80A9515 -o build/ifort_E3F92D23D80A9515/FortranVec/src_mod_utilties.F90.o
+[ 25%]               mod_utilties.F90  done.
+[ 25%]                libFortranVec.a
+ + mkdir -p build/ifort_C0E4F37A20DF6460/FortranVec/
+ + ar -rs build/ifort_C0E4F37A20DF6460/FortranVec/libFortranVec.a build/ifort_E3F92D23D80A9515/FortranVec/src_mod_utilties.F90.o
+ar: creating build/ifort_C0E4F37A20DF6460/FortranVec/libFortranVec.a
+[ 50%]                libFortranVec.a  done.
+[ 50%]                       main.f90
+ + ifort -c app/main.f90   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_E3F92D23D80A9515 -Ibuild/ifort_E3F92D23D80A9515 -o build/ifort_E3F92D23D80A9515/FortranVec/app_main.f90.o
+[ 75%]                       main.f90  done.
+[ 75%]                     FortranVec
+ + mkdir -p build/ifort_9A3B601192E0126D/app/
+ + ifort    -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp  -qopenmp build/ifort_E3F92D23D80A9515/FortranVec/app_main.f90.o build/ifort_C0E4F37A20DF6460/FortranVec/libFortranVec.a -o build/ifort_9A3B601192E0126D/app/FortranVec
+ld: /opt/intel/oneapi/compiler/2023.2.1/linux/compiler/lib/intel64_lin/libiomp5.a(ompt-general.o): in function `ompt_pre_init':
+(.text+0x2d24): warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
+[100%]                     FortranVec  done.
+[100%] Project compiled successfully.
+ + build/ifort_9A3B601192E0126D/app/FortranVec "par_fortran=1" "verbose=0" "method=0"
+ Starting program...
+ &ARGS
+ METHOD  = 0,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  0
+ =============================================================
+ VFI runs for 14.37402 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_E3F92D23D80A9515 -c -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_E3F92D23D80A9515 -o build/ifort_E3F92D23D80A9515/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+ + mkdir -p build/ifx_0B2F52F2CE7CF9BB
+ + mkdir -p build/ifx_1299263F9219F23A
+ + mkdir -p build/ifx_6F24015F6325816C
+[  0%]               mod_utilties.F90
+ + mkdir -p build/ifx_1299263F9219F23A/FortranVec/
+ + ifx -c ././src/mod_utilties.F90   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_1299263F9219F23A -Ibuild/ifx_1299263F9219F23A -o build/ifx_1299263F9219F23A/FortranVec/src_mod_utilties.F90.o
+[ 25%]               mod_utilties.F90  done.
+[ 25%]                libFortranVec.a
+ + mkdir -p build/ifx_0B2F52F2CE7CF9BB/FortranVec/
+ + ar -rs build/ifx_0B2F52F2CE7CF9BB/FortranVec/libFortranVec.a build/ifx_1299263F9219F23A/FortranVec/src_mod_utilties.F90.o
+ar: creating build/ifx_0B2F52F2CE7CF9BB/FortranVec/libFortranVec.a
+[ 50%]                libFortranVec.a  done.
+[ 50%]                       main.f90
+ + ifx -c app/main.f90   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_1299263F9219F23A -Ibuild/ifx_1299263F9219F23A -o build/ifx_1299263F9219F23A/FortranVec/app_main.f90.o
+[ 75%]                       main.f90  done.
+[ 75%]                     FortranVec
+ + mkdir -p build/ifx_6F24015F6325816C/app/
+ + ifx    -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp  -qopenmp build/ifx_1299263F9219F23A/FortranVec/app_main.f90.o build/ifx_0B2F52F2CE7CF9BB/FortranVec/libFortranVec.a -o build/ifx_6F24015F6325816C/app/FortranVec
+[100%]                     FortranVec  done.
+[100%] Project compiled successfully.
+ + build/ifx_6F24015F6325816C/app/FortranVec "verbose=0"
+ Starting program...
+ &ARGS
+ METHOD  = 1,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 0
+ /
+ Starting VFI...
+ Method =  1
+ =============================================================
+ VFI runs for 36.02753 seconds. compiled by Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2023.2.0 Build 20230721 using the options -Ibuild/ifx_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_1299263F9219F23A -o build/ifx_1299263F9219F23A/FortranVec/app_main.f90.o 
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifx_6F24015F6325816C/app/FortranVec "par_fortran=1" "verbose=0" "method=0"
+ Starting program...
+ &ARGS
+ METHOD  = 0,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  0
+ =============================================================
+ VFI runs for 17.19049 seconds. compiled by Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2023.2.0 Build 20230721 using the options -Ibuild/ifx_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_1299263F9219F23A -o build/ifx_1299263F9219F23A/FortranVec/app_main.f90.o 
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+ + mkdir -p build/ifx_C0E4F37A20DF6460
+ + mkdir -p build/ifx_E3F92D23D80A9515
+ + mkdir -p build/ifx_9A3B601192E0126D
+[  0%]               mod_utilties.F90
+ + mkdir -p build/ifx_E3F92D23D80A9515/FortranVec/
+ + ifx -c ././src/mod_utilties.F90   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_E3F92D23D80A9515 -Ibuild/ifx_E3F92D23D80A9515 -o build/ifx_E3F92D23D80A9515/FortranVec/src_mod_utilties.F90.o
+[ 25%]               mod_utilties.F90  done.
+[ 25%]                libFortranVec.a
+ + mkdir -p build/ifx_C0E4F37A20DF6460/FortranVec/
+ + ar -rs build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a build/ifx_E3F92D23D80A9515/FortranVec/src_mod_utilties.F90.o
+ar: creating build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a
+[ 50%]                libFortranVec.a  done.
+[ 50%]                       main.f90
+ + ifx -c app/main.f90   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_E3F92D23D80A9515 -Ibuild/ifx_E3F92D23D80A9515 -o build/ifx_E3F92D23D80A9515/FortranVec/app_main.f90.o
+[ 75%]                       main.f90  done.
+[ 75%]                     FortranVec
+ + mkdir -p build/ifx_9A3B601192E0126D/app/
+ + ifx    -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp  -qopenmp build/ifx_E3F92D23D80A9515/FortranVec/app_main.f90.o build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a -o build/ifx_9A3B601192E0126D/app/FortranVec
+ld: build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a: error adding symbols: archive has no index; run ranlib to add one
+[100%]                     FortranVec  done.
+
+ld: build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a: error adding symbols: archive has no index; run ranlib to add one
+<ERROR> Compilation failed for object " FortranVec "
+<ERROR> stopping due to failed compilation
+STOP 1
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/gfortran_11A5B31A7089DD14/app/FortranVec "par_fortran=0" "verbose=0" "method=1"
+ Starting program...
+&ARGS
+ METHOD=1          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=0          ,
+ /
+ Starting VFI...
+ Method =            1
+ =============================================================
+ VFI runs for 10.0371742 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_A43A99359B8528EA -mtune=generic -march=x86-64 -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_A43A99359B8528EA -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/gfortran_11A5B31A7089DD14/app/FortranVec "par_fortran=1" "verbose=0" "method=1"
+ Starting program...
+&ARGS
+ METHOD=1          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=1          ,
+ /
+ Starting VFI...
+ Method =            1
+ =============================================================
+ VFI runs for 4.96218061 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_A43A99359B8528EA -mtune=generic -march=x86-64 -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_A43A99359B8528EA -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -Ofast -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/gfortran_15E79EC25CE6D804/app/FortranVec "par_fortran=1" "verbose=0" "method=1"
+ Starting program...
+&ARGS
+ METHOD=1          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=1          ,
+ /
+ Starting VFI...
+ Method =            1
+ =============================================================
+ VFI runs for 5.13348055 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_3EC294C0E066E392 -mtune=generic -march=x86-64 -Ofast -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_3EC294C0E066E392 -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifort_6F24015F6325816C/app/FortranVec "verbose=0" "method=1"
+ Starting program...
+ &ARGS
+ METHOD  = 1,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 0
+ /
+ Starting VFI...
+ Method =  1
+ =============================================================
+ VFI runs for 35.43669 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_1299263F9219F23A -o build/ifort_1299263F9219F23A/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifort_6F24015F6325816C/app/FortranVec "par_fortran=1" "verbose=0" "method=1"
+ Starting program...
+ &ARGS
+ METHOD  = 1,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  1
+ =============================================================
+ VFI runs for 18.24915 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_1299263F9219F23A -o build/ifort_1299263F9219F23A/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifort_9A3B601192E0126D/app/FortranVec "par_fortran=1" "verbose=0" "method=1"
+ Starting program...
+ &ARGS
+ METHOD  = 1,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  1
+ =============================================================
+ VFI runs for 19.82332 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_E3F92D23D80A9515 -c -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_E3F92D23D80A9515 -o build/ifort_E3F92D23D80A9515/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifx_6F24015F6325816C/app/FortranVec "verbose=0" "method=1"
+ Starting program...
+ &ARGS
+ METHOD  = 1,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 0
+ /
+ Starting VFI...
+ Method =  1
+ =============================================================
+ VFI runs for 39.31131 seconds. compiled by Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2023.2.0 Build 20230721 using the options -Ibuild/ifx_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_1299263F9219F23A -o build/ifx_1299263F9219F23A/FortranVec/app_main.f90.o 
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifx_6F24015F6325816C/app/FortranVec "par_fortran=1" "verbose=0" "method=1"
+ Starting program...
+ &ARGS
+ METHOD  = 1,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  1
+ =============================================================
+ VFI runs for 18.81534 seconds. compiled by Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2023.2.0 Build 20230721 using the options -Ibuild/ifx_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_1299263F9219F23A -o build/ifx_1299263F9219F23A/FortranVec/app_main.f90.o 
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[  0%]                     FortranVec
+ + ifx    -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp  -qopenmp build/ifx_E3F92D23D80A9515/FortranVec/app_main.f90.o build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a -o build/ifx_9A3B601192E0126D/app/FortranVec
+ld: build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a: error adding symbols: archive has no index; run ranlib to add one
+[100%]                     FortranVec  done.
+
+ld: build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a: error adding symbols: archive has no index; run ranlib to add one
+<ERROR> Compilation failed for object " FortranVec "
+<ERROR> stopping due to failed compilation
+STOP 1
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/gfortran_11A5B31A7089DD14/app/FortranVec "par_fortran=0" "verbose=0" "method=2"
+ Starting program...
+&ARGS
+ METHOD=2          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=0          ,
+ /
+ Starting VFI...
+ Method =            2
+ =============================================================
+ VFI runs for 23.6425037 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_A43A99359B8528EA -mtune=generic -march=x86-64 -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_A43A99359B8528EA -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/gfortran_11A5B31A7089DD14/app/FortranVec "par_fortran=1" "verbose=0" "method=2"
+ Starting program...
+&ARGS
+ METHOD=2          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=1          ,
+ /
+ Starting VFI...
+ Method =            2
+ =============================================================
+ VFI runs for 22.8188190 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_A43A99359B8528EA -mtune=generic -march=x86-64 -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_A43A99359B8528EA -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/gfortran
+ <INFO> COMPILER:  gfortran
+ <INFO> C COMPILER:  gcc
+ <INFO> CXX COMPILER: g++
+ <INFO> COMPILER OPTIONS:   -Ofast -O3 -funroll-loops -Wimplicit-interface -fPIC -fmax-errors=1 -fcoarray=single -fopenmp
+ <INFO> C COMPILER OPTIONS:   -fopenmp
+ <INFO> CXX COMPILER OPTIONS:  -fopenmp
+ <INFO> LINKER OPTIONS:   -fopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/gfortran_15E79EC25CE6D804/app/FortranVec "par_fortran=1" "verbose=0" "method=2"
+ Starting program...
+&ARGS
+ METHOD=2          ,
+ VERBOSE=0          ,
+ PAR_FORTRAN=1          ,
+ /
+ Starting VFI...
+ Method =            2
+ =============================================================
+ VFI runs for 22.2891293 seconds. compiled by GCC version 13.1.0 using the options -I build/gfortran_3EC294C0E066E392 -mtune=generic -march=x86-64 -Ofast -O3 -Wimplicit-interface -Werror=implicit-interface -funroll-loops -fPIC -fmax-errors=1 -fcoarray=single -fopenmp -fimplicit-none -ffree-form -J build/gfortran_3EC294C0E066E392 -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifort_6F24015F6325816C/app/FortranVec "verbose=0" "method=2"
+ Starting program...
+ &ARGS
+ METHOD  = 2,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 0
+ /
+ Starting VFI...
+ Method =  2
+ =============================================================
+ VFI runs for 64.20283 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_1299263F9219F23A -o build/ifort_1299263F9219F23A/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifort_6F24015F6325816C/app/FortranVec "par_fortran=1" "verbose=0" "method=2"
+ Starting program...
+ &ARGS
+ METHOD  = 2,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  2
+ =============================================================
+ VFI runs for 63.05618 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_1299263F9219F23A -o build/ifort_1299263F9219F23A/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifort
+ <INFO> COMPILER:  ifort
+ <INFO> C COMPILER:  icc
+ <INFO> CXX COMPILER: icpc
+ <INFO> COMPILER OPTIONS:   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifort_9A3B601192E0126D/app/FortranVec "par_fortran=1" "verbose=0" "method=2"
+ Starting program...
+ &ARGS
+ METHOD  = 2,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  2
+ =============================================================
+ VFI runs for 62.49443 seconds. compiled by Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000 using the options -Ibuild/ifort_E3F92D23D80A9515 -c -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifort_E3F92D23D80A9515 -o build/ifort_E3F92D23D80A9515/FortranVec/app_main.f90.o
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifx_6F24015F6325816C/app/FortranVec "verbose=0" "method=2"
+ Starting program...
+ &ARGS
+ METHOD  = 2,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 0
+ /
+ Starting VFI...
+ Method =  2
+ =============================================================
+ VFI runs for 62.22282 seconds. compiled by Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2023.2.0 Build 20230721 using the options -Ibuild/ifx_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_1299263F9219F23A -o build/ifx_1299263F9219F23A/FortranVec/app_main.f90.o 
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[100%] Project compiled successfully.
+ + build/ifx_6F24015F6325816C/app/FortranVec "par_fortran=1" "verbose=0" "method=2"
+ Starting program...
+ &ARGS
+ METHOD  = 2,
+ VERBOSE = 0,
+ PAR_FORTRAN     = 1
+ /
+ Starting VFI...
+ Method =  2
+ =============================================================
+ VFI runs for 62.66160 seconds. compiled by Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2023.2.0 Build 20230721 using the options -Ibuild/ifx_1299263F9219F23A -c -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp -free -module build/ifx_1299263F9219F23A -o build/ifx_1299263F9219F23A/FortranVec/app_main.f90.o 
+ =============================================================
+ Writing results to file...
+ <INFO> BUILD_NAME: build/ifx
+ <INFO> COMPILER:  ifx
+ <INFO> C COMPILER:  icx
+ <INFO> CXX COMPILER: icpx
+ <INFO> COMPILER OPTIONS:   -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp
+ <INFO> C COMPILER OPTIONS:   -qopenmp
+ <INFO> CXX COMPILER OPTIONS:  -qopenmp
+ <INFO> LINKER OPTIONS:   -qopenmp
+ <INFO> INCLUDE DIRECTORIES:  []
+[  0%]                     FortranVec
+ + ifx    -fast -O3 -fp-model precise -pc64 -align all -error-limit 1 -reentrancy threaded -nogen-interfaces -assume byterecl -standard-semantics -qopenmp  -qopenmp build/ifx_E3F92D23D80A9515/FortranVec/app_main.f90.o build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a -o build/ifx_9A3B601192E0126D/app/FortranVec
+ld: build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a: error adding symbols: archive has no index; run ranlib to add one
+[100%]                     FortranVec  done.
+
+ld: build/ifx_C0E4F37A20DF6460/FortranVec/libFortranVec.a: error adding symbols: archive has no index; run ranlib to add one
+<ERROR> Compilation failed for object " FortranVec "
+<ERROR> stopping due to failed compilation
+STOP 1
+test completed with ifort, gfortran. Remaining parameters ignored
